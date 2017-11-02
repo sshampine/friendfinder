@@ -1,10 +1,14 @@
+//require survey from file
 var survey = require("../data/friends");
 
+//exports routes as function
 module.exports = function(app) {
+	//api route to return json data
 	app.get("/api/friends", function(req, res) {
 		res.json(survey);
 	});
 
+	//api route to determine best friend match
 	app.post("/api/friends", function(req, res) {
 		var match = {
 		name: "",
